@@ -59,14 +59,16 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+       super.viewDidLoad()
+   self.navigationController?.isNavigationBarHidden = true
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
           // ...
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(handle!)
+   self.navigationController?.isNavigationBarHidden = false
+    Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     override func viewDidLoad() {

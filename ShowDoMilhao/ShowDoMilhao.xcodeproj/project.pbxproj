@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		3D0C591423628F31000C2FAF /* ShowDoMilhaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C591323628F31000C2FAF /* ShowDoMilhaoUITests.swift */; };
 		3D0C592223629099000C2FAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C592123629099000C2FAF /* GoogleService-Info.plist */; };
 		3D0C592323629099000C2FAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C592123629099000C2FAF /* GoogleService-Info.plist */; };
+		3DCF895323630A8500840E1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF895223630A8500840E1B /* LoginViewController.swift */; };
+		3DCF895523630F0A00840E1B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF895423630F0A00840E1B /* HomeViewController.swift */; };
 		802DE51F8DD2CFBEDD619F4C /* Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7328564639270663894215A /* Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework */; };
 		82ED75FEF22D385F4F4E9305 /* Pods_ShowDoMilhaoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F679A949F5C17D02E849F6 /* Pods_ShowDoMilhaoTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		3D0C591323628F31000C2FAF /* ShowDoMilhaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDoMilhaoUITests.swift; sourceTree = "<group>"; };
 		3D0C591523628F31000C2FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0C592123629099000C2FAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3DCF895223630A8500840E1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3DCF895423630F0A00840E1B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		531BBDE517B81B0C51136D28 /* Pods-ShowDoMilhao-ShowDoMilhaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhao-ShowDoMilhaoUITests.release.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhao-ShowDoMilhaoUITests/Pods-ShowDoMilhao-ShowDoMilhaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5911A3C3A415BB220AFC8A8E /* Pods-ShowDoMilhaoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhaoTests.release.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhaoTests/Pods-ShowDoMilhaoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7125B2D738113C6DE7206174 /* Pods-ShowDoMilhao-ShowDoMilhaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhao-ShowDoMilhaoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhao-ShowDoMilhaoUITests/Pods-ShowDoMilhao-ShowDoMilhaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				3D0C58FA23628F31000C2FAF /* Assets.xcassets */,
 				3D0C58FC23628F31000C2FAF /* LaunchScreen.storyboard */,
 				3D0C58FF23628F31000C2FAF /* Info.plist */,
+				3DCF895223630A8500840E1B /* LoginViewController.swift */,
+				3DCF895423630F0A00840E1B /* HomeViewController.swift */,
 			);
 			path = ShowDoMilhao;
 			sourceTree = "<group>";
@@ -159,7 +165,6 @@
 				E13E178333D9020C07AFD90D /* Pods-ShowDoMilhaoTests.debug.xcconfig */,
 				5911A3C3A415BB220AFC8A8E /* Pods-ShowDoMilhaoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -414,6 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCF895523630F0A00840E1B /* HomeViewController.swift in Sources */,
+				3DCF895323630A8500840E1B /* LoginViewController.swift in Sources */,
 				3D0C58F623628F2D000C2FAF /* ViewController.swift in Sources */,
 				3D0C58F223628F2D000C2FAF /* AppDelegate.swift in Sources */,
 				3D0C58F423628F2D000C2FAF /* SceneDelegate.swift in Sources */,
