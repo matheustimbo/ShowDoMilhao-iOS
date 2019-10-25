@@ -1,0 +1,6 @@
+framework module Pods_ShowDoMilhao {
+  umbrella header "Pods-ShowDoMilhao-umbrella.h"
+
+  export *
+  module * { export * }
+}

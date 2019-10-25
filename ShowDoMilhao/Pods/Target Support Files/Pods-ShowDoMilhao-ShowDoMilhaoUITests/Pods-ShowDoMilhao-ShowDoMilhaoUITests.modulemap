@@ -1,0 +1,6 @@
+framework module Pods_ShowDoMilhao_ShowDoMilhaoUITests {
+  umbrella header "Pods-ShowDoMilhao-ShowDoMilhaoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
