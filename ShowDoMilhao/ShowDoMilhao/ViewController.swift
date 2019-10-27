@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
-
+    var ref: DatabaseReference!
     @IBOutlet weak var nomeInput: UITextField!
     
     @IBOutlet weak var emailInput: UITextField!
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var avisoErro: UILabel!
     
+    
+    
     @IBAction func cadastrarClick(_ sender: Any) {
         
         self.avisoErro.text = ""
@@ -30,6 +33,7 @@ class ViewController: UIViewController {
             //fazer o login do firebase
             let email = emailInput.text!
             let password = senhaInput.text
+            let username = nomeInput.text
             
             Auth.auth().createUser(withEmail: email, password: password!) {
                 authResult, error in
@@ -39,6 +43,16 @@ class ViewController: UIViewController {
                   return
                 }
                 print("\(user.email!) created")
+                
+                
+                self.ref.child("users").child(user.uid).setValue(["username": username])
+                
+                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
+                    if let navigator = self.navigationController {
+                        navigator.pushViewController(viewController, animated: true)
+                    }
+                }
+                
             }
             
         }else{ //ta faltando preencher algum dos campos
@@ -74,6 +88,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ref = Database.database().reference()
         
     }
 

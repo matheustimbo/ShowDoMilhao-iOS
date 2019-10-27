@@ -7,12 +7,37 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
+    var ref: DatabaseReference!
+    var username = ""
 
+    @IBOutlet weak var helloLabel: UILabel!
+    
+    func getUsername(){
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+              // Get user value
+              let value = snapshot.value as? NSDictionary
+            print(value)
+              let username = value?["username"] as? String ?? ""
+              print("username")
+            print(username)
+              self.username = username
+            self.helloLabel.text = "Olá, " + username
+
+          // ...
+          }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
+        self.getUsername()
         // Do any additional setup after loading the view.
     }
     
