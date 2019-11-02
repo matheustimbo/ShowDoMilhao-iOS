@@ -17,6 +17,14 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var avisoErro: UILabel!
     
+    @IBAction func goToCadastro(_ sender: Any) {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Cadastro") as? ViewController {
+            if let navigator = self.navigationController {
+                navigator.pushViewController(viewController, animated: true)
+            }
+        }
+    }
+    
     @IBAction func loginClick(_ sender: Any) {
         
         self.avisoErro.text = ""
@@ -33,8 +41,8 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                //navegar para a tela de login
-                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
+                //navegar para a tela inicial
+                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {
                     if let navigator = self?.navigationController {
                         navigator.pushViewController(viewController, animated: true)
                     }

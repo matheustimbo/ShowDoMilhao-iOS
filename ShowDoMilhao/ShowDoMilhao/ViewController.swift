@@ -35,6 +35,14 @@ class ViewController: UIViewController {
             let password = senhaInput.text
             let username = nomeInput.text
             
+            let actionCodeSettings = ActionCodeSettings()
+            actionCodeSettings.url = URL(string: "https://www.example.com")
+            // The sign-in operation has to always be completed in the app.
+            actionCodeSettings.handleCodeInApp = true
+        actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
+        actionCodeSettings.setAndroidPackageName("com.example.android",
+                                                 installIfNotAvailable: false, minimumVersion: "12")
+            
             Auth.auth().createUser(withEmail: email, password: password!) {
                 authResult, error in
                 guard let user = authResult?.user, error == nil else {
@@ -77,6 +85,13 @@ class ViewController: UIViewController {
    self.navigationController?.isNavigationBarHidden = true
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
           // ...
+            if let _ = user {
+                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
+                    if let navigator = self.navigationController {
+                        navigator.pushViewController(viewController, animated: true)
+                    }
+                }
+            }
         }
     }
     
@@ -89,6 +104,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
+        
+        
         
     }
 

@@ -13,20 +13,40 @@ import FirebaseDatabase
 class HomeViewController: UIViewController {
     var ref: DatabaseReference!
     var username = ""
-
+    var loggingOut = false
     @IBOutlet weak var helloLabel: UILabel!
+    
+    @IBAction func logoutClick(_ sender: Any) {
+        if(!self.loggingOut){
+            self.loggingOut = true
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                self.loggingOut = false
+                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Start") as? HomeViewController {
+                    if let navigator = self.navigationController {
+                        navigator.pushViewController(viewController, animated: true)
+                    }
+                }
+            } catch let signOutError as NSError {
+                self.loggingOut = false
+                print ("Error signing out: %@", signOutError)
+            }
+        }
+        
+    }
     
     func getUsername(){
         let userID = Auth.auth().currentUser?.uid
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
               // Get user value
               let value = snapshot.value as? NSDictionary
-            print(value)
+              print(value)
               let username = value?["username"] as? String ?? ""
               print("username")
-            print(username)
+              print(username)
               self.username = username
-            self.helloLabel.text = "Olá, " + username
+              self.helloLabel.text = "Olá, " + username
 
           // ...
           }) { (error) in
