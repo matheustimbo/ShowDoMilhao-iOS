@@ -18,6 +18,9 @@
 		3D0C591423628F31000C2FAF /* ShowDoMilhaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C591323628F31000C2FAF /* ShowDoMilhaoUITests.swift */; };
 		3D0C592223629099000C2FAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C592123629099000C2FAF /* GoogleService-Info.plist */; };
 		3D0C592323629099000C2FAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C592123629099000C2FAF /* GoogleService-Info.plist */; };
+		3D15977E2370428F006B8D15 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15977D2370428F006B8D15 /* QuizViewController.swift */; };
+		3D15978023704412006B8D15 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15977F23704412006B8D15 /* RankingViewController.swift */; };
+		3D159782237047F8006B8D15 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D159781237047F8006B8D15 /* Question.swift */; };
 		3DCAE1212369DA4600711BD5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAE1202369DA4600711BD5 /* StartViewController.swift */; };
 		3DCAE1232369DB5900711BD5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAE1222369DB5900711BD5 /* LoadingViewController.swift */; };
 		3DCF895323630A8500840E1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF895223630A8500840E1B /* LoginViewController.swift */; };
@@ -60,6 +63,9 @@
 		3D0C591323628F31000C2FAF /* ShowDoMilhaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDoMilhaoUITests.swift; sourceTree = "<group>"; };
 		3D0C591523628F31000C2FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0C592123629099000C2FAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3D15977D2370428F006B8D15 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		3D15977F23704412006B8D15 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		3D159781237047F8006B8D15 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3DCAE1202369DA4600711BD5 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		3DCAE1222369DB5900711BD5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		3DCF895223630A8500840E1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 				3DCF895423630F0A00840E1B /* HomeViewController.swift */,
 				3DCAE1202369DA4600711BD5 /* StartViewController.swift */,
 				3DCAE1222369DB5900711BD5 /* LoadingViewController.swift */,
+				3D15977D2370428F006B8D15 /* QuizViewController.swift */,
+				3D15977F23704412006B8D15 /* RankingViewController.swift */,
+				3D159781237047F8006B8D15 /* Question.swift */,
 			);
 			path = ShowDoMilhao;
 			sourceTree = "<group>";
@@ -428,10 +437,13 @@
 				3DCAE1232369DB5900711BD5 /* LoadingViewController.swift in Sources */,
 				3DCF895523630F0A00840E1B /* HomeViewController.swift in Sources */,
 				3DCF895323630A8500840E1B /* LoginViewController.swift in Sources */,
+				3D15977E2370428F006B8D15 /* QuizViewController.swift in Sources */,
 				3D0C58F623628F2D000C2FAF /* ViewController.swift in Sources */,
+				3D159782237047F8006B8D15 /* Question.swift in Sources */,
 				3D0C58F223628F2D000C2FAF /* AppDelegate.swift in Sources */,
 				3D0C58F423628F2D000C2FAF /* SceneDelegate.swift in Sources */,
 				3DCAE1212369DA4600711BD5 /* StartViewController.swift in Sources */,
+				3D15978023704412006B8D15 /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,11 @@ class HomeViewController: UIViewController {
     var ref: DatabaseReference!
     var username = ""
     var loggingOut = false
+    
     @IBOutlet weak var helloLabel: UILabel!
+    
+   
+    
     
     @IBAction func logoutClick(_ sender: Any) {
         if(!self.loggingOut){
