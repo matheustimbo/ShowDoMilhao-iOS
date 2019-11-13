@@ -272,7 +272,6 @@
         <!--Home View Controller-->
         <scene sceneID="Tpy-th-lHe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aCk-dT-PQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x0S-9F-3xB" customClass="HomeViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gGS-H9-60A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -322,6 +321,7 @@
                         <outlet property="helloLabel" destination="QMF-f9-3ve" id="kO7-A5-zBW"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCk-dT-PQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2503" y="110"/>
         </scene>
@@ -405,6 +405,8 @@
                         <outlet property="option3" destination="RRy-0M-gY5" id="Pg3-Jq-a6h"/>
                         <outlet property="option4" destination="NZf-RJ-bsl" id="7eI-Aa-sHj"/>
                         <outlet property="questionLabel" destination="8p3-yJ-MJX" id="D55-G5-JoB"/>
+                        <segue destination="iEN-ay-6ue" kind="presentation" identifier="Resposta" id="aAh-t5-OQm"/>
+                        <segue destination="RaR-xB-u6Q" kind="show" id="md8-fP-oPw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEG-UQ-q20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -443,10 +445,10 @@
             </objects>
             <point key="canvasLocation" x="3287" y="-215"/>
         </scene>
-        <!--View Controller-->
+        <!--Resultado View Controller-->
         <scene sceneID="ztw-x7-r3V">
             <objects>
-                <viewController id="RaR-xB-u6Q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Resultado" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RaR-xB-u6Q" customClass="ResultadoViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qh8-qy-jtX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -465,8 +467,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recorde:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXm-qR-jWo">
-                                <rect key="frame" x="107" y="336" width="86" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Erros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXm-qR-jWo">
+                                <rect key="frame" x="107" y="336" width="55" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -476,10 +478,43 @@
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="HjN-pJ-eGc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qsa-dH-o5d"/>
+                    <connections>
+                        <outlet property="labelAcertos" destination="RWH-Gb-STp" id="UJW-Es-4y4"/>
+                        <outlet property="labelErros" destination="EXm-qR-jWo" id="FQO-hH-TWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nP-Z9-QeP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3940.579710144928" y="440.625"/>
+            <point key="canvasLocation" x="4084" y="441"/>
+        </scene>
+        <!--Resposta View Controller-->
+        <scene sceneID="lad-Lt-Y2h">
+            <objects>
+                <viewController storyboardIdentifier="Resposta" id="iEN-ay-6ue" customClass="RespostaViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j53-iX-kjv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-OJ-WgU">
+                                <rect key="frame" x="68" y="141" width="279" height="364"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="50s-T7-faC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aAK-pd-KmJ"/>
+                    <connections>
+                        <outlet property="label" destination="cnF-OJ-WgU" id="LHB-C2-GCv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LE8-Cz-bhV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3573.913043478261" y="1177.2321428571429"/>
         </scene>
     </scenes>
 </document>

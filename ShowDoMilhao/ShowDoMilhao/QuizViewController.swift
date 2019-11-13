@@ -27,6 +27,7 @@ class QuizViewController: UIViewController {
     var ref: DatabaseReference!
     var questions = [Question]()
     var acertos = 0
+    var erros = 0
     
     
     override func viewDidLoad() {
@@ -63,15 +64,28 @@ class QuizViewController: UIViewController {
     func processAnswer(answeredIndex:Int){
         if(answeredIndex == self.answerIndex){
             self.acertos+=1
+            if(self.acertos + self.erros == 2){
+                self.performSegue(withIdentifier: "Resultado", sender: self)
+            }else{
+                self.performSegue(withIdentifier: "Resposta", sender: self)
+            }
+        }else{
+            self.erros+=1
+            if(self.acertos + self.erros == 2){
+                self.performSegue(withIdentifier: "Resultado", sender: self)
+            }else{
+                self.performSegue(withIdentifier: "Resposta", sender: self)
+            }
         }
-        self.questionIndex+=1
-        updateLabels()
+        if(!(self.acertos + self.erros == 2)){
+           self.questionIndex+=1
+            updateLabels()
+        }
+        
     }
     
     @IBAction func teste(_ sender: Any) {
-        //self.questionIndex+=1
-        //updateLabels()
-        print(self.acertos)
+        self.performSegue(withIdentifier: "Resposta", sender: self)
     }
     
     func updateLabels(){
@@ -105,6 +119,17 @@ class QuizViewController: UIViewController {
             print(error.localizedDescription)
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "Resposta"){
+            let dvc = segue.destination as! RespostaViewController;      dvc.acertou = true
+        }
+        if(segue.identifier == "Resultado"){
+            let dvc = segue.destination as! ResultadoViewController
+            dvc.acertos = self.acertos
+            dvc.erros = self.erros
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
