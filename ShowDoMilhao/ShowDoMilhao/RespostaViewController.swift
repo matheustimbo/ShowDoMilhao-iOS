@@ -17,7 +17,10 @@ class RespostaViewController: UIViewController {
         super.viewDidLoad()
         
         if(self.acertou==true){
-            self.label.text="Parabéns\n Você acertou!"
+            self.label.text="Parabéns você acertou!"
+        }
+        if(self.acertou==false){
+            self.label.text="Você errou!"
         }
         // Do any additional setup after loading the view.
     }

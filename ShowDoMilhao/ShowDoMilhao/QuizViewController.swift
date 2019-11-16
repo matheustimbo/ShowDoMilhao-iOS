@@ -28,6 +28,7 @@ class QuizViewController: UIViewController {
     var questions = [Question]()
     var acertos = 0
     var erros = 0
+    var acertouUltimaQuestao = false
     
     
     override func viewDidLoad() {
@@ -64,17 +65,17 @@ class QuizViewController: UIViewController {
     func processAnswer(answeredIndex:Int){
         if(answeredIndex == self.answerIndex){
             self.acertos+=1
-            if(self.acertos + self.erros == 2){
-                self.performSegue(withIdentifier: "Resultado", sender: self)
+            if(self.acertos + self.erros == 16){
+                self.acertouUltimaQuestao = true; self.performSegue(withIdentifier: "Resultado", sender: self)
             }else{
-                self.performSegue(withIdentifier: "Resposta", sender: self)
+               self.acertouUltimaQuestao = true; self.performSegue(withIdentifier: "Resposta", sender: self)
             }
         }else{
             self.erros+=1
-            if(self.acertos + self.erros == 2){
-                self.performSegue(withIdentifier: "Resultado", sender: self)
+            if(self.acertos + self.erros == 16){
+               self.acertouUltimaQuestao = false; self.performSegue(withIdentifier: "Resultado", sender: self)
             }else{
-                self.performSegue(withIdentifier: "Resposta", sender: self)
+               self.acertouUltimaQuestao = false; self.performSegue(withIdentifier: "Resposta", sender: self)
             }
         }
         if(!(self.acertos + self.erros == 2)){
@@ -103,14 +104,17 @@ class QuizViewController: UIViewController {
     }
     
     func loadQuestions(){
-        ref.child("questions").observeSingleEvent(of: .value, with: { (snapshot) in
+        print("a")
+        ref.child("PERGUNTAS").observeSingleEvent(of: .value, with: { (snapshot) in
               // Get user value
               print(snapshot)
             for question in snapshot.children {
+                print("question")
+                print(question)
                 let questionSnapshot = question as! DataSnapshot
                 let question = questionSnapshot.value as! [String:Any]
-                let options = question["options"] as! [String]
-                let questionInstance = Question(question: question["question"] as! String, answerIndex: question["answerIndex"] as! Int, options: options)
+                let options = question["Alternativas"] as! [String]
+                let questionInstance = Question(question: question["pergunta"] as! String, answerIndex: question["Resposta"] as! Int, options: options)
                 self.questions.append(questionInstance)
                 self.updateLabels()
             }
@@ -123,7 +127,10 @@ class QuizViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "Resposta"){
-            let dvc = segue.destination as! RespostaViewController;      dvc.acertou = true
+            let dvc = segue.destination as! RespostaViewController;
+            print("ultima questao")
+            print(self.acertouUltimaQuestao)
+            dvc.acertou = self.acertouUltimaQuestao
         }
         if(segue.identifier == "Resultado"){
             let dvc = segue.destination as! ResultadoViewController
