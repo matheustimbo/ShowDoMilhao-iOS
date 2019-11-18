@@ -17,16 +17,11 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var avisoErro: UILabel!
     
-    @IBAction func goToCadastro(_ sender: Any) {
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Cadastro") as? ViewController {
-            if let navigator = self.navigationController {
-                navigator.pushViewController(viewController, animated: true)
-            }
-        }
-    }
+    @IBOutlet weak var loadingLoginIndicator: UIActivityIndicatorView!
     
+  
     @IBAction func loginClick(_ sender: Any) {
-        
+        self.loadingLoginIndicator.isHidden = false;
         self.avisoErro.text = ""
         if( self.emailInput.text != "" && self.senhaInput.text != ""){
             
@@ -40,16 +35,18 @@ class LoginViewController: UIViewController {
                     self?.avisoErro.text = error.localizedDescription
                     return
                 }
-                
+                self?.loadingLoginIndicator.isHidden = true
                 //navegar para a tela inicial
                 if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {
                     if let navigator = self?.navigationController {
                         navigator.pushViewController(viewController, animated: true)
                     }
                 }
+                
             }
             
         }else{ //ta faltando preencher algum dos campos
+            self.loadingLoginIndicator.isHidden = true
             if(self.emailInput.text == ""){
                     self.avisoErro.text = "Insira um email"
                 }else{
@@ -64,7 +61,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loadingLoginIndicator.isHidden = true
+        self.loadingLoginIndicator.startAnimating()
         // Do any additional setup after loading the view.
     }
     

@@ -66,16 +66,21 @@ class QuizViewController: UIViewController {
         if(answeredIndex == self.answerIndex){
             self.acertos+=1
             if(self.acertos + self.erros == 16){
-                self.acertouUltimaQuestao = true; self.performSegue(withIdentifier: "Resultado", sender: self)
+                self.acertouUltimaQuestao = true;
+                updateFirebaseShots()
+                self.performSegue(withIdentifier: "Resultado", sender: self)
             }else{
                self.acertouUltimaQuestao = true; self.performSegue(withIdentifier: "Resposta", sender: self)
             }
         }else{
             self.erros+=1
             if(self.acertos + self.erros == 16){
-               self.acertouUltimaQuestao = false; self.performSegue(withIdentifier: "Resultado", sender: self)
+                self.acertouUltimaQuestao = false;
+                updateFirebaseShots()
+                self.performSegue(withIdentifier: "Resultado", sender: self)
             }else{
-               self.acertouUltimaQuestao = false; self.performSegue(withIdentifier: "Resposta", sender: self)
+                self.acertouUltimaQuestao = false;
+                self.performSegue(withIdentifier: "Resposta", sender: self)
             }
         }
         if(!(self.acertos + self.erros == 2)){
@@ -85,8 +90,19 @@ class QuizViewController: UIViewController {
         
     }
     
-    @IBAction func teste(_ sender: Any) {
-        self.performSegue(withIdentifier: "Resposta", sender: self)
+    func updateFirebaseShots(){
+        self.ref.child("users").child(Auth.auth().currentUser!.uid).child("lastShot").setValue(self.acertos)
+        self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if let bestShot = snapshot.value{
+                if( self.acertos > bestShot as! Int ){
+                    self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").setValue(self.acertos)
+                }
+            } else{
+                self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").setValue(self.acertos)
+            }
+            
+        })
     }
     
     func updateLabels(){

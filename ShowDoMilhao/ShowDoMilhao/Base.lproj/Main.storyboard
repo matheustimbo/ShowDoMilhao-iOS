@@ -94,7 +94,7 @@
             <objects>
                 <viewController storyboardIdentifier="Cadastro" id="BYZ-38-t0r" customClass="ViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzY-8a-Crc">
@@ -187,7 +187,7 @@
             <objects>
                 <viewController id="YZy-pK-5zL" customClass="LoginViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bWu-IV-1gR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1t-Vj-kgD">
@@ -246,12 +246,16 @@
                                     <action selector="loginClick:" destination="YZy-pK-5zL" eventType="touchUpInside" id="jHc-bH-Rbo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nu-so-11Y">
-                                <rect key="frame" x="84" y="785" width="217" height="30"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="HY8-S5-iks">
+                                <rect key="frame" x="197" y="324" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGN-YA-1ic">
+                                <rect key="frame" x="99" y="769" width="217" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Não tem um login? Cadastre-se"/>
                                 <connections>
-                                    <action selector="goToLogin:" destination="YZy-pK-5zL" eventType="touchUpInside" id="tky-ej-aDf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="47O-BN-GC6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -262,6 +266,7 @@
                     <connections>
                         <outlet property="avisoErro" destination="SMc-2W-kya" id="CY6-SK-J1h"/>
                         <outlet property="emailInput" destination="t56-NK-iVY" id="j2a-l8-T9v"/>
+                        <outlet property="loadingLoginIndicator" destination="HY8-S5-iks" id="m9B-HN-1to"/>
                         <outlet property="senhaInput" destination="VIG-Eg-eU3" id="JgQ-w4-Itg"/>
                     </connections>
                 </viewController>
@@ -373,16 +378,6 @@
                                     <action selector="opt3Press:" destination="PEk-M2-YQj" eventType="touchUpInside" id="Jtq-Kf-AbW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-mW-6vv">
-                                <rect key="frame" x="318" y="105" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="teste:" destination="PEk-M2-YQj" eventType="touchUpInside" id="0mr-9q-60g"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-RJ-bsl">
                                 <rect key="frame" x="20" y="471" width="374" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -406,7 +401,7 @@
                         <outlet property="option4" destination="NZf-RJ-bsl" id="7eI-Aa-sHj"/>
                         <outlet property="questionLabel" destination="8p3-yJ-MJX" id="D55-G5-JoB"/>
                         <segue destination="iEN-ay-6ue" kind="presentation" identifier="Resposta" id="aAh-t5-OQm"/>
-                        <segue destination="RaR-xB-u6Q" kind="show" id="md8-fP-oPw"/>
+                        <segue destination="RaR-xB-u6Q" kind="show" identifier="Resultado" id="p5z-kW-Isx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEG-UQ-q20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -461,14 +456,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acertos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWH-Gb-STp">
-                                <rect key="frame" x="107" y="270" width="87" height="29"/>
+                                <rect key="frame" x="107" y="270" width="269" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Erros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXm-qR-jWo">
-                                <rect key="frame" x="107" y="336" width="55" height="27"/>
+                                <rect key="frame" x="107" y="336" width="269" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -486,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nP-Z9-QeP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4084" y="441"/>
+            <point key="canvasLocation" x="4082.6086956521744" y="440.625"/>
         </scene>
         <!--Resposta View Controller-->
         <scene sceneID="lad-Lt-Y2h">
@@ -517,4 +512,7 @@
             <point key="canvasLocation" x="3573.913043478261" y="1177.2321428571429"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="47O-BN-GC6"/>
+    </inferredMetricsTieBreakers>
 </document>
