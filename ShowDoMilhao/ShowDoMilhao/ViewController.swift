@@ -53,7 +53,10 @@ class ViewController: UIViewController {
                 print("\(user.email!) created")
                 
                 
-                self.ref.child("users").child(user.uid).setValue(["username": username])
+                self.ref.child("users").child(user.uid).setValue(["username": username,
+                                                                  "lastShot": 0,
+                                                                  "bestShot": 0
+                ])
                 
                 if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
                     if let navigator = self.navigationController {

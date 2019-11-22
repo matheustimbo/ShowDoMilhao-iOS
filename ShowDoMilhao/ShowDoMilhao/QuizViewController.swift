@@ -94,9 +94,9 @@ class QuizViewController: UIViewController {
         self.ref.child("users").child(Auth.auth().currentUser!.uid).child("lastShot").setValue(self.acertos)
         self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").observeSingleEvent(of: .value, with: {
             (snapshot) in
-            if let bestShot = snapshot.value{
-                if( self.acertos > bestShot as! Int ){
-                    self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").setValue(self.acertos)
+            if snapshot.exists() {
+                if( self.acertos > snapshot.value as! Int ){
+                   self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").setValue(self.acertos)
                 }
             } else{
                 self.ref.child("users").child(Auth.auth().currentUser!.uid).child("bestShot").setValue(self.acertos)
