@@ -41,6 +41,7 @@ class LoadingViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
 

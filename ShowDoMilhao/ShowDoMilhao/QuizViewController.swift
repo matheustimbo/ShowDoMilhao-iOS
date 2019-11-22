@@ -120,7 +120,6 @@ class QuizViewController: UIViewController {
     }
     
     func loadQuestions(){
-        print("a")
         ref.child("PERGUNTAS").observeSingleEvent(of: .value, with: { (snapshot) in
               // Get user value
               print(snapshot)

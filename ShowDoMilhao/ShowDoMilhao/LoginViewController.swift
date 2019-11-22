@@ -35,13 +35,27 @@ class LoginViewController: UIViewController {
                     self?.avisoErro.text = error.localizedDescription
                     return
                 }
-                self?.loadingLoginIndicator.isHidden = true
-                //navegar para a tela inicial
-                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {
-                    if let navigator = self?.navigationController {
-                        navigator.pushViewController(viewController, animated: true)
+                
+                if(Auth.auth().currentUser!.isEmailVerified){
+                    print("ajhjhj")
+                    self?.loadingLoginIndicator.isHidden = true
+                    //navegar para a tela inicial
+                    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {
+                        if let navigator = self?.navigationController {
+                            navigator.pushViewController(viewController, animated: true)
+                        }
                     }
+                } else {
+                    print("b")
+                    self?.loadingLoginIndicator.isHidden = true
+                    try? Auth.auth().signOut()
+                    let alert = UIAlertController(title: "Foi enviado um email de verificação", message: "Confirme seu email", preferredStyle: .alert)
+                                   
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    
+                    self!.present(alert, animated: true, completion: nil)
                 }
+                
                 
             }
             

@@ -24,9 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var avisoErro: UILabel!
     
     
-    
     @IBAction func cadastrarClick(_ sender: Any) {
-        
         self.avisoErro.text = ""
         if(self.nomeInput.text != "" && self.emailInput.text != "" && self.senhaInput.text != ""){
             
@@ -39,8 +37,8 @@ class ViewController: UIViewController {
             actionCodeSettings.url = URL(string: "https://www.example.com")
             // The sign-in operation has to always be completed in the app.
             actionCodeSettings.handleCodeInApp = true
-        actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
-        actionCodeSettings.setAndroidPackageName("com.example.android",
+            actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
+            actionCodeSettings.setAndroidPackageName("com.example.android",
                                                  installIfNotAvailable: false, minimumVersion: "12")
             
             Auth.auth().createUser(withEmail: email, password: password!) {
@@ -53,16 +51,18 @@ class ViewController: UIViewController {
                 print("\(user.email!) created")
                 
                 
-                self.ref.child("users").child(user.uid).setValue(["username": username,
-                                                                  "lastShot": 0,
-                                                                  "bestShot": 0
-                ])
+                self.ref.child("users").child(user.uid).setValue(["username": username ?? "", "lastShot": 0, "bestShot": 0 ])
                 
-                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
-                    if let navigator = self.navigationController {
-                        navigator.pushViewController(viewController, animated: true)
-                    }
+                
+                let alert = UIAlertController(title: "Foi enviado um email de verificação", message: "Confirme seu email", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    self.performSegue(withIdentifier: "toLogin", sender: self)}))
+                
+                user.sendEmailVerification { (_) in
+                    self.present(alert, animated: true, completion: nil)
                 }
+                
                 
             }
             
@@ -78,29 +78,17 @@ class ViewController: UIViewController {
                     }
             }
         }
-        
-        
-        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
        super.viewDidLoad()
-   self.navigationController?.isNavigationBarHidden = true
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-          // ...
-            if let _ = user {
-                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
-                    if let navigator = self.navigationController {
-                        navigator.pushViewController(viewController, animated: true)
-                    }
-                }
-            }
-        }
+        self.navigationController?.isNavigationBarHidden = true
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-   self.navigationController?.isNavigationBarHidden = false
-    Auth.auth().removeStateDidChangeListener(handle!)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidLoad() {
@@ -108,6 +96,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
         
+        if let _  = Auth.auth().currentUser {
+            if(Auth.auth().currentUser!.isEmailVerified){
+                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? HomeViewController {
+                    if let navigator = self.navigationController {
+                        navigator.pushViewController(viewController, animated: true)
+                    }
+                }
+            }
+        }
         
         
     }

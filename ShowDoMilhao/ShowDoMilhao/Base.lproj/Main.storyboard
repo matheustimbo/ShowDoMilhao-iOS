@@ -155,15 +155,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Já tem um cadastro? Faça login"/>
                                 <connections>
-                                    <segue destination="YZy-pK-5zL" kind="show" id="oQi-3v-CLk"/>
+                                    <segue destination="YZy-pK-5zL" kind="show" identifier="toLogin" id="oQi-3v-CLk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-q7-0dc">
-                                <rect key="frame" x="181" y="433" width="72" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4U-iH-ril">
+                                <rect key="frame" x="165" y="443" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cadastrar "/>
+                                <state key="normal" title="Cadastrar"/>
                                 <connections>
-                                    <action selector="cadastrarClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y47-eF-pH4"/>
+                                    <action selector="cadastrarClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGB-ox-xke"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -324,6 +324,7 @@
                     <navigationItem key="navigationItem" id="WaM-ok-40A"/>
                     <connections>
                         <outlet property="helloLabel" destination="QMF-f9-3ve" id="kO7-A5-zBW"/>
+                        <segue destination="IG6-Iy-Won" kind="show" identifier="logout" id="toU-4R-cJ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCk-dT-PQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -539,5 +540,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="47O-BN-GC6"/>
+        <segue reference="toU-4R-cJ3"/>
     </inferredMetricsTieBreakers>
 </document>

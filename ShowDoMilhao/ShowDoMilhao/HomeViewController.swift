@@ -27,11 +27,7 @@ class HomeViewController: UIViewController {
             do {
                 try firebaseAuth.signOut()
                 self.loggingOut = false
-                if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Start") as? HomeViewController {
-                    if let navigator = self.navigationController {
-                        navigator.pushViewController(viewController, animated: true)
-                    }
-                }
+                self.performSegue(withIdentifier: "logout", sender: self)
             } catch let signOutError as NSError {
                 self.loggingOut = false
                 print ("Error signing out: %@", signOutError)
