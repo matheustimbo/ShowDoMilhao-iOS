@@ -29,6 +29,29 @@
 		3DCF895523630F0A00840E1B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF895423630F0A00840E1B /* HomeViewController.swift */; };
 		802DE51F8DD2CFBEDD619F4C /* Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7328564639270663894215A /* Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework */; };
 		82ED75FEF22D385F4F4E9305 /* Pods_ShowDoMilhaoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F679A949F5C17D02E849F6 /* Pods_ShowDoMilhaoTests.framework */; };
+		8C360886238DFCBA00CCB3EA /* abertura.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360885238DFCBA00CCB3EA /* abertura.mp3 */; };
+		8C360897238DFD7400CCB3EA /* 200 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360887238DFD7200CCB3EA /* 200 mil reais.mp3 */; };
+		8C360898238DFD7400CCB3EA /* 1000 (milhao) mil de reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360888238DFD7300CCB3EA /* 1000 (milhao) mil de reais.mp3 */; };
+		8C360899238DFD7400CCB3EA /* 500 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360889238DFD7300CCB3EA /* 500 mil reais.mp3 */; };
+		8C36089A238DFD7400CCB3EA /* 30 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C36088A238DFD7300CCB3EA /* 30 mil reais.mp3 */; };
+		8C36089B238DFD7400CCB3EA /* 50 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C36088B238DFD7300CCB3EA /* 50 mil reais.mp3 */; };
+		8C36089C238DFD7400CCB3EA /* 100 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C36088C238DFD7300CCB3EA /* 100 mil reais.mp3 */; };
+		8C36089D238DFD7400CCB3EA /* 3 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C36088D238DFD7300CCB3EA /* 3 mil reais.mp3 */; };
+		8C36089E238DFD7400CCB3EA /* 20 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C36088E238DFD7300CCB3EA /* 20 mil reais.mp3 */; };
+		8C36089F238DFD7400CCB3EA /* 400 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C36088F238DFD7300CCB3EA /* 400 mil reais.mp3 */; };
+		8C3608A0238DFD7400CCB3EA /* 40 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360890238DFD7300CCB3EA /* 40 mil reais.mp3 */; };
+		8C3608A1238DFD7400CCB3EA /* 1 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360891238DFD7300CCB3EA /* 1 mil reais.mp3 */; };
+		8C3608A2238DFD7400CCB3EA /* 4 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360892238DFD7300CCB3EA /* 4 mil reais.mp3 */; };
+		8C3608A3238DFD7400CCB3EA /* 10 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360893238DFD7300CCB3EA /* 10 mil reais.mp3 */; };
+		8C3608A4238DFD7400CCB3EA /* 5 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360894238DFD7300CCB3EA /* 5 mil reais.mp3 */; };
+		8C3608A5238DFD7400CCB3EA /* 2 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360895238DFD7400CCB3EA /* 2 mil reais.mp3 */; };
+		8C3608A6238DFD7400CCB3EA /* 300 mil reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C360896238DFD7400CCB3EA /* 300 mil reais.mp3 */; };
+		8C3608A9238DFDD300CCB3EA /* Pergunta_Som.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C3608A7238DFDD300CCB3EA /* Pergunta_Som.mp3 */; };
+		8C3608AA238DFDD300CCB3EA /* Parabens.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C3608A8238DFDD300CCB3EA /* Parabens.mp3 */; };
+		8C3608AC238DFDE600CCB3EA /* que pena_ voce errou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C3608AB238DFDE600CCB3EA /* que pena_ voce errou.mp3 */; };
+		8C3608AF238DFE0900CCB3EA /* Você tem certeza.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C3608AD238DFE0900CCB3EA /* Você tem certeza.mp3 */; };
+		8C3608B0238DFE0900CCB3EA /* voce ganhou um milhao de reais.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C3608AE238DFE0900CCB3EA /* voce ganhou um milhao de reais.mp3 */; };
+		8CF306B0238DAB9100881CEC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF306AF238DAB9100881CEC /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +101,29 @@
 		5911A3C3A415BB220AFC8A8E /* Pods-ShowDoMilhaoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhaoTests.release.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhaoTests/Pods-ShowDoMilhaoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7125B2D738113C6DE7206174 /* Pods-ShowDoMilhao-ShowDoMilhaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhao-ShowDoMilhaoUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhao-ShowDoMilhaoUITests/Pods-ShowDoMilhao-ShowDoMilhaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		77F679A949F5C17D02E849F6 /* Pods_ShowDoMilhaoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowDoMilhaoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C360885238DFCBA00CCB3EA /* abertura.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = abertura.mp3; path = "../../../../Downloads/SHOW DO MILHAO ASSETS/abertura.mp3"; sourceTree = "<group>"; };
+		8C360887238DFD7200CCB3EA /* 200 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "200 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360888238DFD7300CCB3EA /* 1000 (milhao) mil de reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1000 (milhao) mil de reais.mp3"; sourceTree = "<group>"; };
+		8C360889238DFD7300CCB3EA /* 500 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "500 mil reais.mp3"; sourceTree = "<group>"; };
+		8C36088A238DFD7300CCB3EA /* 30 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "30 mil reais.mp3"; sourceTree = "<group>"; };
+		8C36088B238DFD7300CCB3EA /* 50 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "50 mil reais.mp3"; sourceTree = "<group>"; };
+		8C36088C238DFD7300CCB3EA /* 100 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "100 mil reais.mp3"; sourceTree = "<group>"; };
+		8C36088D238DFD7300CCB3EA /* 3 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3 mil reais.mp3"; sourceTree = "<group>"; };
+		8C36088E238DFD7300CCB3EA /* 20 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "20 mil reais.mp3"; sourceTree = "<group>"; };
+		8C36088F238DFD7300CCB3EA /* 400 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "400 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360890238DFD7300CCB3EA /* 40 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "40 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360891238DFD7300CCB3EA /* 1 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360892238DFD7300CCB3EA /* 4 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "4 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360893238DFD7300CCB3EA /* 10 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360894238DFD7300CCB3EA /* 5 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360895238DFD7400CCB3EA /* 2 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "2 mil reais.mp3"; sourceTree = "<group>"; };
+		8C360896238DFD7400CCB3EA /* 300 mil reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "300 mil reais.mp3"; sourceTree = "<group>"; };
+		8C3608A7238DFDD300CCB3EA /* Pergunta_Som.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Pergunta_Som.mp3; path = "../../../../Downloads/SHOW DO MILHAO ASSETS/Pergunta_Som.mp3"; sourceTree = "<group>"; };
+		8C3608A8238DFDD300CCB3EA /* Parabens.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Parabens.mp3; path = "../../../../Downloads/SHOW DO MILHAO ASSETS/Parabens.mp3"; sourceTree = "<group>"; };
+		8C3608AB238DFDE600CCB3EA /* que pena_ voce errou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "que pena_ voce errou.mp3"; path = "../../../../Downloads/SHOW DO MILHAO ASSETS/que pena_ voce errou.mp3"; sourceTree = "<group>"; };
+		8C3608AD238DFE0900CCB3EA /* Você tem certeza.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Você tem certeza.mp3"; path = "../../../../Downloads/SHOW DO MILHAO ASSETS/Você tem certeza.mp3"; sourceTree = "<group>"; };
+		8C3608AE238DFE0900CCB3EA /* voce ganhou um milhao de reais.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "voce ganhou um milhao de reais.mp3"; path = "../../../../Downloads/SHOW DO MILHAO ASSETS/voce ganhou um milhao de reais.mp3"; sourceTree = "<group>"; };
+		8CF306AF238DAB9100881CEC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D7328564639270663894215A /* Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8620EBFBD6DC221705672B /* Pods-ShowDoMilhao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhao.debug.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhao/Pods-ShowDoMilhao.debug.xcconfig"; sourceTree = "<group>"; };
 		E13E178333D9020C07AFD90D /* Pods-ShowDoMilhaoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowDoMilhaoTests.debug.xcconfig"; path = "Target Support Files/Pods-ShowDoMilhaoTests/Pods-ShowDoMilhaoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF306B0238DAB9100881CEC /* AVFoundation.framework in Frameworks */,
 				0546E19FDE73FBCD4FBAACA4 /* Pods_ShowDoMilhao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +162,28 @@
 		3D0C58E523628F2D000C2FAF = {
 			isa = PBXGroup;
 			children = (
+				8C3608AE238DFE0900CCB3EA /* voce ganhou um milhao de reais.mp3 */,
+				8C3608AD238DFE0900CCB3EA /* Você tem certeza.mp3 */,
+				8C3608AB238DFDE600CCB3EA /* que pena_ voce errou.mp3 */,
+				8C3608A8238DFDD300CCB3EA /* Parabens.mp3 */,
+				8C3608A7238DFDD300CCB3EA /* Pergunta_Som.mp3 */,
+				8C360891238DFD7300CCB3EA /* 1 mil reais.mp3 */,
+				8C360895238DFD7400CCB3EA /* 2 mil reais.mp3 */,
+				8C36088D238DFD7300CCB3EA /* 3 mil reais.mp3 */,
+				8C360892238DFD7300CCB3EA /* 4 mil reais.mp3 */,
+				8C360894238DFD7300CCB3EA /* 5 mil reais.mp3 */,
+				8C360893238DFD7300CCB3EA /* 10 mil reais.mp3 */,
+				8C36088E238DFD7300CCB3EA /* 20 mil reais.mp3 */,
+				8C36088A238DFD7300CCB3EA /* 30 mil reais.mp3 */,
+				8C360890238DFD7300CCB3EA /* 40 mil reais.mp3 */,
+				8C36088B238DFD7300CCB3EA /* 50 mil reais.mp3 */,
+				8C36088C238DFD7300CCB3EA /* 100 mil reais.mp3 */,
+				8C360887238DFD7200CCB3EA /* 200 mil reais.mp3 */,
+				8C360896238DFD7400CCB3EA /* 300 mil reais.mp3 */,
+				8C36088F238DFD7300CCB3EA /* 400 mil reais.mp3 */,
+				8C360889238DFD7300CCB3EA /* 500 mil reais.mp3 */,
+				8C360888238DFD7300CCB3EA /* 1000 (milhao) mil de reais.mp3 */,
+				8C360885238DFCBA00CCB3EA /* abertura.mp3 */,
 				3D0C58F023628F2D000C2FAF /* ShowDoMilhao */,
 				3D0C590723628F31000C2FAF /* ShowDoMilhaoTests */,
 				3D0C591223628F31000C2FAF /* ShowDoMilhaoUITests */,
@@ -192,6 +261,7 @@
 		FCC631F90D920BED9CBF1AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CF306AF238DAB9100881CEC /* AVFoundation.framework */,
 				3B4A172EFF6CD6B6D804A696 /* Pods_ShowDoMilhao.framework */,
 				D7328564639270663894215A /* Pods_ShowDoMilhao_ShowDoMilhaoUITests.framework */,
 				77F679A949F5C17D02E849F6 /* Pods_ShowDoMilhaoTests.framework */,
@@ -308,10 +378,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C360898238DFD7400CCB3EA /* 1000 (milhao) mil de reais.mp3 in Resources */,
+				8C3608A4238DFD7400CCB3EA /* 5 mil reais.mp3 in Resources */,
 				3D0C58FE23628F31000C2FAF /* LaunchScreen.storyboard in Resources */,
+				8C360899238DFD7400CCB3EA /* 500 mil reais.mp3 in Resources */,
+				8C36089B238DFD7400CCB3EA /* 50 mil reais.mp3 in Resources */,
+				8C3608A5238DFD7400CCB3EA /* 2 mil reais.mp3 in Resources */,
+				8C3608AC238DFDE600CCB3EA /* que pena_ voce errou.mp3 in Resources */,
+				8C3608A9238DFDD300CCB3EA /* Pergunta_Som.mp3 in Resources */,
+				8C3608A1238DFD7400CCB3EA /* 1 mil reais.mp3 in Resources */,
+				8C36089E238DFD7400CCB3EA /* 20 mil reais.mp3 in Resources */,
+				8C3608B0238DFE0900CCB3EA /* voce ganhou um milhao de reais.mp3 in Resources */,
+				8C36089C238DFD7400CCB3EA /* 100 mil reais.mp3 in Resources */,
+				8C3608AA238DFDD300CCB3EA /* Parabens.mp3 in Resources */,
+				8C360897238DFD7400CCB3EA /* 200 mil reais.mp3 in Resources */,
+				8C36089A238DFD7400CCB3EA /* 30 mil reais.mp3 in Resources */,
+				8C3608AF238DFE0900CCB3EA /* Você tem certeza.mp3 in Resources */,
+				8C3608A3238DFD7400CCB3EA /* 10 mil reais.mp3 in Resources */,
 				3D0C592223629099000C2FAF /* GoogleService-Info.plist in Resources */,
+				8C360886238DFCBA00CCB3EA /* abertura.mp3 in Resources */,
+				8C3608A6238DFD7400CCB3EA /* 300 mil reais.mp3 in Resources */,
 				3D0C58FB23628F31000C2FAF /* Assets.xcassets in Resources */,
+				8C3608A2238DFD7400CCB3EA /* 4 mil reais.mp3 in Resources */,
+				8C36089D238DFD7400CCB3EA /* 3 mil reais.mp3 in Resources */,
+				8C3608A0238DFD7400CCB3EA /* 40 mil reais.mp3 in Resources */,
 				3D0C58F923628F2D000C2FAF /* Main.storyboard in Resources */,
+				8C36089F238DFD7400CCB3EA /* 400 mil reais.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,13 +718,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9PY3L8YAUW;
+				DEVELOPMENT_TEAM = MMN7M9S7K3;
 				INFOPLIST_FILE = ShowDoMilhao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.unifor.ShowDoMilhao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unifor.ShowDoMilhaoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -645,13 +737,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9PY3L8YAUW;
+				DEVELOPMENT_TEAM = MMN7M9S7K3;
 				INFOPLIST_FILE = ShowDoMilhao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.unifor.ShowDoMilhao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unifor.ShowDoMilhaoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

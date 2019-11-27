@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
                 }
                 
                 if(Auth.auth().currentUser!.isEmailVerified){
-                    print("ajhjhj")
+                    
                     self?.loadingLoginIndicator.isHidden = true
                     //navegar para a tela inicial
                     if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {

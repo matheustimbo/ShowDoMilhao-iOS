@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func cadastrarClick(_ sender: Any) {
+        
         self.avisoErro.text = ""
         if(self.nomeInput.text != "" && self.emailInput.text != "" && self.senhaInput.text != ""){
             
@@ -92,7 +93,9 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
         

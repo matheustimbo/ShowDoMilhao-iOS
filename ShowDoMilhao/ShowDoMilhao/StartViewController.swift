@@ -7,16 +7,32 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StartViewController: UIViewController {
-
+    
+    var musicEffect: AVAudioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let musicFile = Bundle.main.path(forResource: "abertura", ofType: ".mp3")
+        
+        do{
+            try musicEffect = AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicFile!))
+        }
+        
+        catch{
+                print(error)
+        }
+        
+        
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
@@ -35,5 +51,18 @@ class StartViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func playMusic(_ sender: Any) {
+        
+        musicEffect.play()
+    }
+    
+    
+    @IBAction func stopMusic(_ sender: Any) {
+        
+        musicEffect.stop()
+    }
+    
 
 }

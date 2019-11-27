@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
               print("username")
               print(username)
               self.username = username
-              self.helloLabel.text = "Olá, " + username
+              self.helloLabel.text = " " + username
 
           // ...
           }) { (error) in
