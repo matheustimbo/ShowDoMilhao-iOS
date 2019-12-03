@@ -17,9 +17,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var helloLabel: UILabel!
     
-   
-    
-    
     @IBAction func logoutClick(_ sender: Any) {
         if(!self.loggingOut){
             self.loggingOut = true
@@ -39,18 +36,25 @@ class HomeViewController: UIViewController {
     func getUsername(){
         let userID = Auth.auth().currentUser?.uid
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-              // Get user value
-              let value = snapshot.value as? NSDictionary
-              print(value)
-              let username = value?["username"] as? String ?? ""
-              print("username")
-              print(username)
-              self.username = username
-              self.helloLabel.text = " " + username
-
-          // ...
-          }) { (error) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            print(value)
+            let username = value?["username"] as? String ?? ""
+            print("username")
+            print(username)
+            self.username = username
+            self.helloLabel.text = "Olá, " + username
+            
+            // ...
+        }) { (error) in
             print(error.localizedDescription)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "abrirQuiz" {
+            let controller = segue.destination as! QuizViewController
+            controller.delegate = self
         }
     }
     
@@ -69,15 +73,27 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
     }
-
+    
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension HomeViewController: QuizViewControllerDelegate {
+    func chamarTelaResultado() {
+        
+        self.navigationController?.popViewController(animated: true)
+        
+        let controller = (storyboard?.instantiateViewController(identifier: "Resultado")) as! ResultadoViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
-    */
-
+    
 }

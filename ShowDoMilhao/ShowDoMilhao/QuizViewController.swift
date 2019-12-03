@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+protocol QuizViewControllerDelegate {
+    func chamarTelaResultado()
+}
+
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -21,6 +25,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var option3: UIButton!
     
     @IBOutlet weak var option4: UIButton!
+        
+    var delegate: QuizViewControllerDelegate!
     
     var questionIndex = 0
     var answerIndex = 0
@@ -63,29 +69,28 @@ class QuizViewController: UIViewController {
     }
     
     func processAnswer(answeredIndex:Int){
+        self.questionIndex += 1
         if(answeredIndex == self.answerIndex){
             self.acertos+=1
             if(self.acertos + self.erros == 16){
+                print("a")
                 self.acertouUltimaQuestao = true;
                 updateFirebaseShots()
                 self.performSegue(withIdentifier: "Resultado", sender: self)
             }else{
-               self.acertouUltimaQuestao = true; self.performSegue(withIdentifier: "Resposta", sender: self)
+                print("b")
+               self.acertouUltimaQuestao = true;
+                updateLabels()
+                self.performSegue(withIdentifier: "Resposta", sender: self)
             }
         }else{
             self.erros+=1
-            if(self.acertos + self.erros == 16){
-                self.acertouUltimaQuestao = false;
-                updateFirebaseShots()
-                self.performSegue(withIdentifier: "Resultado", sender: self)
-            }else{
-                self.acertouUltimaQuestao = false;
-                self.performSegue(withIdentifier: "Resposta", sender: self)
-            }
-        }
-        if(!(self.acertos + self.erros == 2)){
-           self.questionIndex+=1
-            updateLabels()
+
+            
+            
+            updateFirebaseShots()
+//            self.performSegue(withIdentifier: "Resultado", sender: self)
+            self.delegate.chamarTelaResultado()
         }
         
     }
@@ -106,7 +111,7 @@ class QuizViewController: UIViewController {
     }
     
     func updateLabels(){
-    
+        print("veio")
         self.questionLabel.text = self.questions[self.questionIndex].question
         self.option1.setTitle(self.questions[self.questionIndex].options[0], for: .normal)
         self.option2.setTitle(self.questions[self.questionIndex].options[1], for: .normal)
@@ -143,6 +148,7 @@ class QuizViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "Resposta"){
             let dvc = segue.destination as! RespostaViewController;
+            dvc.delegate = self
             print("ultima questao")
             print(self.acertouUltimaQuestao)
             dvc.acertou = self.acertouUltimaQuestao
@@ -167,4 +173,11 @@ class QuizViewController: UIViewController {
     }
     */
 
+}
+
+extension QuizViewController: RespostaViewControllerDelegate {
+    func encerrarQuiz() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

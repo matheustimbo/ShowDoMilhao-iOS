@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol RespostaViewControllerDelegate {
+    func encerrarQuiz()
+}
+
 class RespostaViewController: UIViewController {
 
     var acertou = false
     var teste = ""
     @IBOutlet weak var label: UILabel!
+    
+    var delegate: RespostaViewControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +30,15 @@ class RespostaViewController: UIViewController {
             self.label.text="Você errou!"
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if !acertou {
+            self.delegate.encerrarQuiz()
+        }
+        
     }
     
 

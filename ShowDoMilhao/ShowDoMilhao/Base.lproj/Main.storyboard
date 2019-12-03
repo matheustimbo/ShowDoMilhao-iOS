@@ -66,7 +66,7 @@
             <objects>
                 <viewController storyboardIdentifier="Start" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IG6-Iy-Won" customClass="StartViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIz-ah-7FZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="Very Blue" translatesAutoresizingMaskIntoConstraints="NO" id="XAz-nP-iyG">
@@ -350,6 +350,7 @@
                         <outlet property="emailInput" destination="t56-NK-iVY" id="j2a-l8-T9v"/>
                         <outlet property="loadingLoginIndicator" destination="HY8-S5-iks" id="m9B-HN-1to"/>
                         <outlet property="senhaInput" destination="VIG-Eg-eU3" id="JgQ-w4-Itg"/>
+                        <segue destination="x0S-9F-3xB" kind="show" identifier="login" id="pSg-jJ-rrZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIy-Kr-qF2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -361,7 +362,7 @@
             <objects>
                 <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x0S-9F-3xB" customClass="HomeViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gGS-H9-60A">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Very Blue" translatesAutoresizingMaskIntoConstraints="NO" id="oag-wG-r4a">
@@ -395,7 +396,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PEk-M2-YQj" kind="show" id="KfH-aT-nrQ"/>
+                                    <segue destination="PEk-M2-YQj" kind="show" identifier="abrirQuiz" id="KfH-aT-nrQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpZ-eE-3mM">
@@ -445,7 +446,7 @@
             <objects>
                 <viewController storyboardIdentifier="quiz" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PEk-M2-YQj" customClass="QuizViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALW-sb-0Ey">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Very Blue" translatesAutoresizingMaskIntoConstraints="NO" id="Fga-tn-o5u">
@@ -537,14 +538,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASr-vG-0qa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="110"/>
+            <point key="canvasLocation" x="1778" y="-396"/>
         </scene>
         <!--Ranking View Controller-->
         <scene sceneID="wwS-ep-ytT">
             <objects>
                 <viewController storyboardIdentifier="ranking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EsB-pd-rCQ" customClass="RankingViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xpM-KK-aXC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Very Blue" translatesAutoresizingMaskIntoConstraints="NO" id="CiP-rU-GDc">
@@ -552,7 +553,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rt4-Rh-2cN">
-                                <rect key="frame" x="41" y="146" width="332" height="397"/>
+                                <rect key="frame" x="41" y="58" width="332" height="431"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rankingCell" id="YmY-Jo-6V8">
@@ -600,7 +601,7 @@
             <objects>
                 <viewController storyboardIdentifier="Resultado" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RaR-xB-u6Q" customClass="ResultadoViewController" customModule="ShowDoMilhao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qh8-qy-jtX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Very Blue" translatesAutoresizingMaskIntoConstraints="NO" id="QzG-x3-tRl">
@@ -710,6 +711,7 @@
         <image name="xmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pSg-jJ-rrZ"/>
         <segue reference="47O-BN-GC6"/>
         <segue reference="toU-4R-cJ3"/>
     </inferredMetricsTieBreakers>

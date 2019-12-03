@@ -40,11 +40,12 @@ class LoginViewController: UIViewController {
                     
                     self?.loadingLoginIndicator.isHidden = true
                     //navegar para a tela inicial
-                    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {
+                    /*if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as? StartViewController {
                         if let navigator = self?.navigationController {
                             navigator.pushViewController(viewController, animated: true)
                         }
-                    }
+                    }*/
+                    self?.performSegue(withIdentifier: "login", sender: self)
                 } else {
                     print("b")
                     self?.loadingLoginIndicator.isHidden = true
