@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 protocol QuizViewControllerDelegate {
-    func chamarTelaResultado()
+    func chamarTelaResultado(erros: Int, acertos: Int)
 }
 
 class QuizViewController: UIViewController {
@@ -90,7 +90,7 @@ class QuizViewController: UIViewController {
             
             updateFirebaseShots()
 //            self.performSegue(withIdentifier: "Resultado", sender: self)
-            self.delegate.chamarTelaResultado()
+            self.delegate.chamarTelaResultado(erros: self.erros, acertos: self.acertos)
         }
         
     }

@@ -87,11 +87,14 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: QuizViewControllerDelegate {
-    func chamarTelaResultado() {
+    
+    func chamarTelaResultado(erros: Int, acertos: Int) {
         
         self.navigationController?.popViewController(animated: true)
         
         let controller = (storyboard?.instantiateViewController(identifier: "Resultado")) as! ResultadoViewController
+        controller.erros = erros
+        controller.acertos = acertos
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
